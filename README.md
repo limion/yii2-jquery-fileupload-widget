@@ -7,7 +7,7 @@ Inspired by https://github.com/2amigos/yii2-file-upload-widget
 
 ### Installation
 
-Command line
+From command line
 
 ```bash
 $ composer require limion/yii2-jquery-fileupload-widget:~1.0
@@ -16,14 +16,16 @@ $ composer require limion/yii2-jquery-fileupload-widget:~1.0
 or add to your composer.json
 
 ```
-"limion/yii2-jquery-fileupload-widget": "~1.0"
+"require": {
+	"limion/yii2-jquery-fileupload-widget": "~1.0"
+}	
 ```
 
 ### Usage
 
 #### UI version
 See: https://blueimp.github.io/jQuery-File-Upload/index.html
-
+Please note, in case of using a "UI" version you need to embed the widget to an existing form.
 ```PHP
 <?php
 use limion\jqueryfileupload\JQueryFileUpload;
@@ -162,5 +164,40 @@ $this->registerJs($js);
 ]);?>
 ```
 
+#### Basic version
+See: https://blueimp.github.io/jQuery-File-Upload/basic.html
 
+```PHP
+<?php
+use limion\jqueryfileupload\JQueryFileUpload;
+
+<?= limion\jqueryfileupload\JQueryFileUpload::widget([
+        'url'=>['upload','param'=>'files','multiple'=>1],
+        'appearance'=>'basic',
+        'name' => 'files[]',
+        'options' => [
+            'accept' => 'image/*'
+        ],
+        'clientOptions' => [
+            'maxFileSize' => 2000000,
+            'dataType' => 'json',
+            'acceptFileTypes'=>new yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+            'autoUpload'=>true
+        ],
+        'clientEvents' => [
+            'done'=> "function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                    $('<p/>').text(file.name).appendTo('#files');
+                });
+            }",
+            'progressall'=> "function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress .progress-bar').css(
+                    'width',
+                    progress + '%'
+                );
+            }"
+        ]
+    ]);?>
+```    
 
