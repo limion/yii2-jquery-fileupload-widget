@@ -24,7 +24,7 @@ or add to your composer.json
 ### Usage
 
 #### UI version
-See: https://blueimp.github.io/jQuery-File-Upload/index.html
+See: https://blueimp.github.io/jQuery-File-Upload/index.html  
 Please note, in case of using a "UI" version you need to embed the widget to an existing form.
 ```PHP
 <?php
@@ -172,8 +172,8 @@ See: https://blueimp.github.io/jQuery-File-Upload/basic.html
 use limion\jqueryfileupload\JQueryFileUpload;
 
 <?= limion\jqueryfileupload\JQueryFileUpload::widget([
-        'url'=>['upload','param'=>'files','multiple'=>1],
-        'appearance'=>'basic',
+        'url' => ['upload', 'someparam' => 'somevalue'], // your route for saving images,
+        'appearance'=>'basic', // available values: 'ui','plus' or 'basic'
         'name' => 'files[]',
         'options' => [
             'accept' => 'image/*'
