@@ -27,7 +27,7 @@ class jQueryFileUploadPlusAsset extends AssetBundle
     ];
     public $depends = [
         'limion\jqueryfileupload\JQueryFileUploadAsset',
-        'limion\jqueryfileupload\JQueryFileUpload\LoadImageAsset',
-        'limion\jqueryfileupload\JQueryFileUpload\Canvas2BlobAsset'
+        'limion\jqueryfileupload\LoadImageAsset',
+        'limion\jqueryfileupload\Canvas2BlobAsset'
     ];
 }
