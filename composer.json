@@ -1,0 +1,36 @@
+{
+    "name": "limion/yii2-jquery-fileupload-widget",
+    "description": "Blueimp file upload widget for the Yii framework",
+    "keywords": [
+        "limion",
+        "yii2",
+        "widget",
+        "upload"
+    ],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/limion/yii2-jquery-fileupload-widget",
+    "authors": [
+        {
+            "name": "Vladyslav Holovko",
+            "email": "vlad.holovko@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "bower-asset/blueimp-file-upload": "~9.11",
+        "bower-asset/blueimp-gallery": "~2.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "limion\\jqueryfileupload\\": "src"
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
