@@ -1,6 +1,6 @@
 {
     "name": "limion/yii2-jquery-fileupload-widget",
-    "description": "Blueimp file upload widget for the Yii framework",
+    "description": "Blueimp file upload widget for Yii2",
     "keywords": [
         "limion",
         "yii2",
