@@ -32,12 +32,11 @@ use limion\jqueryfileupload\JQueryFileUpload;
 
 <?php $form = ActiveForm::begin(); ?>
 <?= JQueryFileUpload::widget([
-        'name' => 'files[]',
+        'model' => $model,
+        'attribute' => 'img',
 	      'url' => ['upload', 'someparam' => 'somevalue'], // your route for saving images,
         'appearance'=>'ui', // available values: 'ui','plus' or 'basic'
         'formId'=>$form->id,
-        'model' => '$model',
-        'attribute' => 'img',
         'options' => [
             'accept' => 'image/*'
         ],
