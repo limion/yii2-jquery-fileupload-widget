@@ -1,7 +1,9 @@
 #Blueimp file upload widget for Yii2
 
 Yii2 port of [BlueImp jQuery File Upload plugin](http://blueimp.github.io/jQuery-File-Upload/). File Upload widget with multiple file selection, drag&drop support, progress bars, validation and preview images, audio and video for jQuery.
-Supports cross-domain, chunked and resumable file uploads and client-side image resizing.
+Supports cross-domain, chunked and resumable file uploads and client-side image resizing.  
+
+One widget, simple configuration, everything works out of the box.
 
 Inspired by https://github.com/2amigos/yii2-file-upload-widget
 
