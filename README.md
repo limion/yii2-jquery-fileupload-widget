@@ -36,8 +36,9 @@ use limion\jqueryfileupload\JQueryFileUpload;
 <?= JQueryFileUpload::widget([
         'model' => $model,
         'attribute' => 'img',
-	      'url' => ['upload', 'someparam' => 'somevalue'], // your route for saving images,
+	'url' => ['upload', 'someparam' => 'somevalue'], // your route for saving images,
         'appearance'=>'ui', // available values: 'ui','plus' or 'basic'
+        'gallery'=>true, // whether to use the Bluimp Gallery on the images or not
         'formId'=>$form->id,
         'options' => [
             'accept' => 'image/*'
@@ -46,6 +47,30 @@ use limion\jqueryfileupload\JQueryFileUpload;
             'maxFileSize' => 2000000,
             'dataType' => 'json',
             'acceptFileTypes'=>new yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+            'autoUpload'=>false
+        ]
+    ]);?>
+<?php ActiveForm::end(); ?>    
+```
+##### Customizing the UI
+You can use your own templates to customize the look and feel of upload,download and main views  
+
+```PHP
+<?php
+use limion\jqueryfileupload\JQueryFileUpload;
+
+<?php $form = ActiveForm::begin(); ?>
+<?= JQueryFileUpload::widget([
+        'model' => $model,
+        'attribute' => 'img',
+	'url' => ['upload', 'someparam' => 'somevalue'], // your route for saving images,
+        'appearance'=>'ui', // available values: 'ui','plus' or 'basic'
+        'uploadTemplateView'=>'@app/views/jqueryfileupload/upload', // upload template
+        'downloadTemplateView'=>'@app/views/jqueryfileupload/download', // download template
+        'mainView'=>'@app/views/jqueryfileupload/main', // main view with buttonbar
+        'formId'=>$form->id,
+        'clientOptions' => [
+            'maxFileSize' => 2000000,
             'autoUpload'=>false
         ]
     ]);?>
