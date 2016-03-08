@@ -19,6 +19,7 @@
     "require": {
         "yiisoft/yii2": "~2.0.0",
         "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-jui": "*",
         "bower-asset/blueimp-file-upload": "~9.11",
         "bower-asset/blueimp-gallery": "~2.17"
     },
