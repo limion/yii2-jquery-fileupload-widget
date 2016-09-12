@@ -20,7 +20,7 @@ $context = $this->context;
         </span>
     </div>
     <!-- The global progress state -->
-    <div class="col-lg-5 fileupload-progress fade">
+    <div class="col-lg-5 fileupload-progress">
         <!-- The global progress bar -->
         <div id="progress" class="progress">
             <div class="progress-bar progress-bar-success"></div>
